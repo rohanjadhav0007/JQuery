@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Back to Top Link</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      height: 1500px;
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #ccc;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .back-to-top {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .back-to-top:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <h2>My Page</h2>
+  </header>
+
+  <main>
+    <p>Scroll down to see the footer and Back to Top link.</p>
+  </main>
+
+  <footer id="mainFooter">
+    <p>© 2025 My Website</p>
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      $('#mainFooter').before('<a href="#" class="back-to-top">↑ Back to Top</a>');
+    });
+  </script>
+
+</body>
+</html>

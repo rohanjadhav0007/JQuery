@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Validation</title>
+  <style>
+    .error {
+      color: red;
+      display: none; /* Hide by default */
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <form id="myForm">
+    <label>Username:</label><br>
+    <input type="text" id="username"><br>
+    <div class="error">Username is required</div><br>
+
+    <label>Email:</label><br>
+    <input type="text" id="email"><br>
+    <div class="error">Email is required</div><br>
+
+    <button type="submit">Submit</button>
+  </form>
+  <script>
+    $(document).ready(function () {
+      $('#myForm').submit(function (e) {
+        e.preventDefault(); 
+        $('.error').hide();
+
+        let isValid = true;
+        $('#myForm input').each(function () {
+          if ($(this).val().trim() === "") {
+            $(this).siblings('.error').show(); 
+            isValid = false;
+          }
+        });
+
+        if (isValid) {
+          alert("Form submitted successfully!");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

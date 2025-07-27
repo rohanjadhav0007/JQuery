@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Highlight Parent Menu</title>
+  <style>
+    ul {
+      list-style-type: none;
+    }
+
+    #nav > li {
+      padding: 8px;
+      background-color: #f0f0f0;
+      margin-bottom: 5px;
+    }
+
+    .highlight {
+      background-color: #ffd966; 
+    }
+
+    ul ul {
+      margin-left: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <ul id="nav">
+    <li>Main 1
+      <ul>
+        <li><a href="#">Sub 1-1</a></li>
+        <li><a href="#">Sub 1-2</a></li>
+      </ul>
+    </li>
+    <li>Main 2
+      <ul>
+        <li><a href="#">Sub 2-1</a></li>
+        <li><a href="#">Sub 2-2</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  
+  <script>
+    $(document).ready(function () {
+      $('#nav a').click(function (e) {
+        e.preventDefault();
+        $('#nav > li').removeClass('highlight');
+        $(this).closest('ul').parent().addClass('highlight');
+        console.log(highlight)
+      });
+    });
+  </script>
+
+</body>
+</html>

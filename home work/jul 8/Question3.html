@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notification Bar</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: bisque;
+    }
+
+    header {
+      background-color: gray;
+      padding: 15px;
+      font-size: 1.2em;
+      text-align: center;
+    }
+
+    .notification {
+      background-color: red;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 2px 4px black;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <header id="mainHeader">My Website</header>
+
+  <main>
+    <p>This is the main content of the page.</p>
+  </main>
+
+  <script>
+    $(document).ready(function () {
+      $('#mainHeader').after('<div class="notification"> New Update Available!</div>');
+    });
+  </script>
+
+</body>
+</html>

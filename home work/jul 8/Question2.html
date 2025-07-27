@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .message {
+      margin-bottom: 10px;
+      padding: 5px;
+      background-color: #e0e0e0;
+      border-radius: 5px;
+    }
+
+    .timestamp {
+      font-size: 0.8em;
+      color: #555;
+      margin-right: 5px;
+    }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+     
+  <input type="text" id="messageInput" placeholder="Type a message">
+  <button id="sendBtn">Send</button>
+  <div id="chatBox"></div>
+
+
+  <script>
+    function getCurrentTime() {
+      const now = new Date();
+      let hours = now.getHours();
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12;
+      return `${hours}:${minutes} ${ampm}`;
+    }
+
+    $('#sendBtn').on('click', function () {
+      const text = $('#messageInput').val().trim();
+      if (text !== '') {
+        const time = getCurrentTime();
+        const messageDiv = $('<div class="message"></div>');
+        const timestampSpan = $('<span class="timestamp"></span>').text(`[${time}]`);
+        messageDiv.prepend(timestampSpan).append(text);
+        $('#chatBox').append(messageDiv);
+        $('#messageInput').val('');
+      }
+    });
+  </script>
+
+</body>
+</html>

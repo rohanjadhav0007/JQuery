@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Footer Message on Scroll</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      padding: 20px;
+      height: 1500px; 
+      background-color: #f9f9f9;
+    }
+
+    footer {
+      padding: 20px;
+      background-color: #ccc;
+      text-align: center;
+    }
+
+    .message {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <main>
+    <h2>Scroll down to the bottom...</h2>
+    <p>Content goes here...</p>
+  </main>
+
+  <footer id="mainFooter">
+    <p>© 2025 My Website</p>
+  </footer>
+
+  <script>
+    $(document).on('scroll', function () {
+      if ($(document).scrollTop() + $(document).height() >= $(document).height()) {
+        if ($('#mainFooter .message').length === 0) {
+          $('#mainFooter').append('<div class="message">You’ve reached the end!</div>');
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

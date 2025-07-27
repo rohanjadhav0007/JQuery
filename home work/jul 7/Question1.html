@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+<h1>Welcome to My Site</h1>
+    <button class="clickin">ClickIN</button>
+    <button class="clickout">ClickOut</button>
+    <button class="Toggle">Toggle</button>
+    <button class="div1">div</button>
+    <div></div>
+
+    
+    <script>
+            $(document).ready(function (){
+                $('.clickin').click(function (){
+                    $('h1').fadeIn(2000);
+                })
+                $('.clickout').click(function (){
+                    $('h1').fadeOut(2000);
+            })
+            $('.Toggle').click(function (){
+                    $('h1').toggle(2000);
+            })
+            $('.div1').click(function (){
+                    $("div").animate({
+                    'border-radius': '300px',
+                    'width':'500px',
+                    'height':'500px',
+                    'transform':'translate(200px,200px)',
+                    'background-color':'purple',
+                    },2000)
+            })
+            $('div').mouseenter(function (){
+                    $(this).animate({
+                    'border-radius': '300px',
+                    'width':'500px',
+                    'height':'500px',
+                    'transform':'translate(200px,200px)',
+                    'background-color':'purple',
+                    },2000)
+            })
+            $('div').mouseleave(function (){
+                    $(this).animate({
+                        'border-radius': '0px',
+                        'height': '200px',
+                        'width': '200px',
+                        'background-color': 'burlywood',
+                    },2000)
+            })
+            
+            
+
+        })
+    </script>
+</body>
+</html>
