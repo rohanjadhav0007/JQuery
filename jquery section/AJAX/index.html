@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>AJAX</h1>
+    <p class="data">Asynchronous Javadcript and XML</p>
+    <button class="load">Load Document</button>
+    <script>
+        $().ready(function (){
+            const xhttp = new XMLHttpRequest();
+
+            $('.load').click(function (){
+                xhttp.onload = function (){
+                    $('.data').html(this.responseText);
+                }
+                 xhttp.open("GET", "Ajax_doc.txt");
+                 xhttp.send();
+            })
+        })
+    </script>
+</body>
+</html>

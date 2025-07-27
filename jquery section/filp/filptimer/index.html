@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="/responsive-flip-countdown/jquery.flipper-responsive.js"></script>
+</head>
+<body>
+    <div class="flipper" 
+     data-datetime="2025-7-12 00:00:00" 
+     data-template="ddd|HH|ii|ss" 
+     data-labels="Days|Hours|Minutes|Seconds" 
+     data-reverse="true"
+     id="myFlipper">
+     <script>
+        $(function(){
+  $('#myFlipper').flipper('init');
+});
+     </script>
+</div>
+</body>
+</html>

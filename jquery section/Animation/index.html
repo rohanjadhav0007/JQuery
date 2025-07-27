@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/color/jquery.color-3.0.0.js" integrity="sha256-nXuT4oV5wsIpHV/V7Ay53Vf/1rg2lqpiGWoP9CRk2tM=" crossorigin="anonymous"></script>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: burlywood;
+            margin: 0 auto;
+             color: wheat; 
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center; 
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>beautiful</span>
+    </div>
+    <script>
+        $(document).ready(function (){
+            $('div').hover(function(){
+                $(this).animate({
+                    'border-radius': '300px',
+                    'width':'500px',
+                    'height':'500px',
+                    'transform':'translate(200px,200px)',
+                    'background-color':'purple',
+                    'font-size':'80px',
+                    'margin':'0 auto',
+                    'color':'black',
+                    'padding':'100px',
+                    'font-style' : 'italic',  
+                },3000)
+            })
+        })
+    </script>
+</body>
+</html>

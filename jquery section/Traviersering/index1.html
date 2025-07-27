@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            div{
+                width: 1200px;
+                margin:  0 auto;
+                background-color: hotpink;
+                color: red;
+                font-size: 40px;
+            }
+            .detail{
+                display: none;
+                overflow: hidden;
+            }
+    </style>
+</head>
+<body>
+    <button class="stop">Stop Sliding</button>
+    <div class="btn">Click To slide down panel</div>
+    <div class="detail">
+        <pre>
+I found a love for me
+Oh, darlin', just dive right in and follow my lead
+Well, I found a girl, beautiful and sweet
+Oh, I never knew you were the someone waitin' for me
+
+'Cause we were just kids when we fell in love
+Not knowin' what it was
+I will not give you up this time
+But, darlin', just kiss me slow
+Your heart is all I own
+And in your eyes, you're holdin' mine
+        </pre>
+    </div>
+    <script>
+        $().ready(function (){
+            $('.btn').click(function (){
+                $('.detail').slideDown(5000,function(){
+                    alert('sliding complet')
+                });
+                
+            })
+        })
+        $('.stop').click(function(){
+            $('.detail').stop();
+        })
+    </script>
+</body>
+</html>

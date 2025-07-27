@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <input type="text" value="Upskill">
+    <button>Click Me</button>
+    <p class="p">This is <b>HTML</b></p>
+    <script>
+        $().ready(function(){
+            //    alert('HTML '+$('.p').html());
+            //     alert('Text '+$('.p').text())
+
+             $('button').click(function(){
+                //console.log("value :- "+$('input').val());
+                // console.log("Attribut value :- "+$('input').attr('value'))
+
+                //$('p').text('Newly add text')
+                $('p').html('<i>Newly add text</i>')
+                $('input').attr('value','Sahil')
+
+                // document.writeln('Text '+$(this).text())
+                // document.writeln("<br>HTML"+$('.p').html())
+            //     //alert($(this).html())
+             })
+        })
+        // ajx plugin next day
+    </script>
+</body>
+</html>

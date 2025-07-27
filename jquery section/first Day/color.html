@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body{
+            text-align: center;
+            background-color: gray;
+        }
+        div{
+            margin: 0 auto;
+        }
+        .div1{
+            margin-top: 100px;
+            background-color: rgb(231, 153, 10);
+            height: 150px;
+            width: 500px;
+        }
+        .div2{
+            background-color: white;
+            height: 150px;
+            width: 500px;
+        }
+        .div3{
+            background-color: rgb(34, 193, 13);
+            height: 150px;
+            width:  500px;
+        }
+    </style>
+</head>
+<body>
+    <button class="fadeto" style="height: 40px; margin-top: 50px;">Fade To</button>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    
+    <script>
+         $(document).ready(function(){
+            $('.fadeto').click(function (){
+                $('div').fadeTo(1000, 0.5)
+            })
+        })
+    </script>
+</body>
+</html>

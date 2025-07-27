@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- <script src="Jquary.js"></script> -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>JQuery Tutorial!</h1>
+    <button class="hide">Hide</button>
+    <button class="show">Show</button>
+    <button class="toggle">Toggle</button>
+    <script>
+        $(document).ready(function (){
+            $('.hide').click(function (){
+                $('h1').hide();
+            })
+            $('.show').click(function (){
+                $('h1').show();
+            })
+            $('.toggle').click(function (){
+                $('h1').toggle();
+            })
+        })
+         $(document).ready(function () {
+            $('h1').hover(function(){
+                $('h1').css({
+                    'color':'red',
+                    'background-color':'bisque',
+                    'padding': '20px',
+                    'text-align': 'center',
+                    'font-size': '30px'
+                })
+            },
+            function (){
+                $('h1').text("Welcome")
+            })
+            $('h1').click(()=>{
+                alert("Welcome")
+            })
+            // alert("Welcome");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        div{
+            /* width: 300px;
+            height: 300px; */
+            background-color: rosybrown;
+            border: 2px solid black;
+            margin: 5px;
+        }
+        button{
+            background-color: coral;
+            color: crimson;
+            padding: 10px;
+            margin: 10px 35px;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>paragraph 1</p>
+        <p class="p2">paragraph 2</p>
+        <p class="p3">paragraph 3</p>
+        <div class="d1">Hi</div>
+        <div class="d2">Hi</div>
+    </div>
+    <button class="append">append</button>
+    <button class="prepend">prepend</button>
+    <button class="after">After</button>
+    <button class="before">Before</button>
+    <button class="insertAfter">InsertAfter</button>
+    <button class="insertBefore">InsertBefore</button>
+    <button class="Detech">Detech</button>
+    <button class="appendTo">AppendTo</button>
+    <button class="prependTo">PrependTo</button>
+    <button class="remove">Remove</button>
+    <script>
+        $().ready(function (){
+            $('.append').click(function(){
+                let p=document.createElement('p');
+                let textNode=document.createTextNode('paragraph');
+                p.appendChild(textNode)
+                $('.append').click(function(){
+                    $('div').append(p);
+                })
+                $('.prepend').click(function(){
+                    $('div').prepend(p);
+                })
+            })
+
+                $('.after').click(function(){
+                    $('div').after("<P>paragragh<p>");
+                })
+                $('.before').click(function(){
+                    $('div').before("<P>paragragh<p>");
+                })
+                // $('.insertAfter').click(function(){
+                //     $('.p2').insertAfter("<P>paragragh2.2<p>");
+                // })
+                $('.insertAfter').click(function(){
+                    $('<a href="#">Click Here</a>').insertAfter($('.p2'));
+                })
+                $('.insertBefore').click(function(){
+                    $('<a href="#">Click Here</a>').insertBefore($('.p2'));
+                })
+                 $('.Detech').click(function(){
+                    $('.p3').detach();
+                    //$('p').detach('.p2')
+                })
+                $('.appendTo').click(function(){
+                    $('<p>Test para<p>').appendTo($('.d1,.d2'));
+                })
+                $('.prependTo').click(function(){
+                    $('<p>Test para<p>').prependTo($('.d1,.d2'));
+                })
+                 $('.remove').click(function(){
+                    //$('.d2').remove();
+                    $('div').remove('.d2')
+                })
+        })
+    </script>
+</body>
+</html>
